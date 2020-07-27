@@ -3,7 +3,7 @@
 <html><head><meta charset="UTF-8"/>
 <title>Convert numeral to word</title>
 <script type='text/javascript'>
-   var wwsRelease = 'http://webworksheet.com/release/030702';
+   var wwsRelease = 'https://webworksheet.com/release/030702';
    var iterations = 3;
    var manualCalculation = false;
    var calculateOnInit = true;
@@ -28,8 +28,8 @@
    var protectPage = false;
    var webQueries = new Array();
 </script>
-<script type='text/javascript' src='http://webworksheet.com/release/030702/webworksheet.js'></script>
-<script type='text/javascript' src='http://webworksheet.com/release/030702/webworksheetUpdate.js'></script>
+<script type='text/javascript' src='https://webworksheet.com/release/030702/webworksheet.js'></script>
+<script type='text/javascript' src='https://webworksheet.com/release/030702/webworksheetUpdate.js'></script>
 
 <style type='text/css'>
 @media all {
@@ -53,7 +53,8 @@
  TD {white-space:normal; padding-right:2px;}
  TD.hidden {width:0px; visibility:hidden;}
  TD.A1 {font:18pt "Bodoni MT"; background-color:#FFFFFF; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
- TD.D1 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
+ TD.D1 {font:11pt Calibri; background-color:#FFFFFF; color:#FFFFFF; text-align:left; vertical-align:bottom; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px; /*input*/}
+ TD.E1 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
  TD.F1 {font:11pt Calibri; background-color:#FFFFFF; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
  TD.A2 {font:Italic 12pt Calibri; background-color:#FFFFFF; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
  TD.E2 {font:11pt Calibri; background-color:#FFFFFF; text-align:right; padding-right:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
@@ -103,13 +104,13 @@
 
 <tr id='ROW1' style='height:41px;'>
 <td id='A1' colspan=3 class='A1' category='general'>Convert numeral to word</td>
-<td id='D1' class='D1' category='general'></td>
-<td id='E1' class='D1' category='general'></td>
+<td id='D1' class='D1' category='general' data-cval=''></td>
+<td id='E1' class='E1' category='general'></td>
 <td id='F1' colspan=3 class='F1' category='general'>The reverse task is</td></tr>
 
 <tr id='ROW2' style='height:27px;'>
 <td id='A2' colspan=3 class='A2' category='general'></td>
-<td id='D2' class='D1' category='general'></td>
+<td id='D2' class='E1' category='general'></td>
 <td id='E2' class='E2' category='general'></td>
 <td id='F2' colspan=3 class='F2' category='general' data-cval='Convert word to numeral'>
     <a href='Convert_word_to_numeral.htm' target='_top' style='font:11pt Calibri; text-decoration:underline; color:#0000FF;'>Convert word to numeral</a></td></tr>
@@ -117,12 +118,12 @@
 <tr id='ROW3' style='height:20px;'>
 <td id='A3' class='A3' category='general'></td>
 <td id='B3' class='B3' category='general'></td>
-<td id='C3' class='D1' category='general'></td>
-<td id='D3' class='D1' category='general'></td>
-<td id='E3' class='D1' category='general'></td>
-<td id='F3' class='D1' category='general'></td>
-<td id='G3' class='D1' category='general'></td>
-<td id='H3' class='D1' category='general'></td></tr>
+<td id='C3' class='E1' category='general'></td>
+<td id='D3' class='E1' category='general'></td>
+<td id='E3' class='E1' category='general'></td>
+<td id='F3' class='E1' category='general'></td>
+<td id='G3' class='E1' category='general'></td>
+<td id='H3' class='E1' category='general'></td></tr>
 
 <tr id='ROW4' style='height:40px;'>
 <td id='A4' class='A3' category='general'></td>
@@ -136,9 +137,9 @@
 <td id='C5' class='C5' category='general'></td>
 <td id='D5' class='F1' category='general'></td>
 <td id='E5' class='E5' category='general'></td>
-<td id='F5' class='D1' category='general'></td>
-<td id='G5' class='D1' category='general'></td>
-<td id='H5' class='D1' category='general'></td></tr>
+<td id='F5' class='E1' category='general'></td>
+<td id='G5' class='E1' category='general'></td>
+<td id='H5' class='E1' category='general'></td></tr>
 
 <tr id='ROW6' style='height:40px;'>
 <td id='A6' class='A6' category='general'>one</td>
@@ -147,9 +148,9 @@
    <input id='iC6' type='text' class='Text iC6' onChange='return calculate("C6")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='one' /></td>
 <td id='D6' class='D6' category='general'></td>
 <td id='E6' class='E6' category='general'></td>
-<td id='F6' class='D1' category='general'></td>
-<td id='G6' class='D1' category='general'></td>
-<td id='H6' class='D1' category='general'></td></tr>
+<td id='F6' class='E1' category='general'></td>
+<td id='G6' class='E1' category='general'></td>
+<td id='H6' class='E1' category='general'></td></tr>
 
 <tr id='ROW7' style='height:40px;'>
 <td id='A7' class='A6' category='general'>two</td>
@@ -158,9 +159,9 @@
    <input id='iC7' type='text' class='Text iC6' onChange='return calculate("C7")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='two' /></td>
 <td id='D7' class='D6' category='general'></td>
 <td id='E7' class='E6' category='general'></td>
-<td id='F7' class='D1' category='general'></td>
-<td id='G7' class='D1' category='general'></td>
-<td id='H7' class='D1' category='general'></td></tr>
+<td id='F7' class='E1' category='general'></td>
+<td id='G7' class='E1' category='general'></td>
+<td id='H7' class='E1' category='general'></td></tr>
 
 <tr id='ROW8' style='height:40px;'>
 <td id='A8' class='A6' category='general'>three</td>
@@ -169,9 +170,9 @@
    <input id='iC8' type='text' class='Text iC6' onChange='return calculate("C8")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='tree' /></td>
 <td id='D8' class='D6' category='general'></td>
 <td id='E8' class='E6' category='general'></td>
-<td id='F8' class='D1' category='general'></td>
-<td id='G8' class='D1' category='general'></td>
-<td id='H8' class='D1' category='general'></td></tr>
+<td id='F8' class='E1' category='general'></td>
+<td id='G8' class='E1' category='general'></td>
+<td id='H8' class='E1' category='general'></td></tr>
 
 <tr id='ROW9' style='height:40px;'>
 <td id='A9' class='A6' category='general'>four</td>
@@ -180,9 +181,9 @@
    <input id='iC9' type='text' class='Text iC6' onChange='return calculate("C9")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='for' /></td>
 <td id='D9' class='D6' category='general'></td>
 <td id='E9' class='E6' category='general'></td>
-<td id='F9' class='D1' category='general'></td>
-<td id='G9' class='D1' category='general'></td>
-<td id='H9' class='D1' category='general'></td></tr>
+<td id='F9' class='E1' category='general'></td>
+<td id='G9' class='E1' category='general'></td>
+<td id='H9' class='E1' category='general'></td></tr>
 
 <tr id='ROW10' style='height:40px;'>
 <td id='A10' class='A6' category='general'>five</td>
@@ -191,9 +192,9 @@
    <input id='iC10' type='text' class='Text iC6' onChange='return calculate("C10")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='fife' /></td>
 <td id='D10' class='D6' category='general'></td>
 <td id='E10' class='E6' category='general'></td>
-<td id='F10' class='D1' category='general'></td>
-<td id='G10' class='D1' category='general'></td>
-<td id='H10' class='D1' category='general'></td></tr>
+<td id='F10' class='E1' category='general'></td>
+<td id='G10' class='E1' category='general'></td>
+<td id='H10' class='E1' category='general'></td></tr>
 
 <tr id='ROW11' style='height:40px;'>
 <td id='A11' class='A6' category='general'>six</td>
@@ -202,9 +203,9 @@
    <input id='iC11' type='text' class='Text iC6' onChange='return calculate("C11")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='sick' /></td>
 <td id='D11' class='D6' category='general'></td>
 <td id='E11' class='E6' category='general'></td>
-<td id='F11' class='D1' category='general'></td>
-<td id='G11' class='D1' category='general'></td>
-<td id='H11' class='D1' category='general'></td></tr>
+<td id='F11' class='E1' category='general'></td>
+<td id='G11' class='E1' category='general'></td>
+<td id='H11' class='E1' category='general'></td></tr>
 
 <tr id='ROW12' style='height:40px;'>
 <td id='A12' class='A6' category='general'>seven</td>
@@ -213,9 +214,9 @@
    <input id='iC12' type='text' class='Text iC6' onChange='return calculate("C12")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='seven' /></td>
 <td id='D12' class='D6' category='general'></td>
 <td id='E12' class='E6' category='general'></td>
-<td id='F12' class='D1' category='general'></td>
-<td id='G12' class='D1' category='general'></td>
-<td id='H12' class='D1' category='general'></td></tr>
+<td id='F12' class='E1' category='general'></td>
+<td id='G12' class='E1' category='general'></td>
+<td id='H12' class='E1' category='general'></td></tr>
 
 <tr id='ROW13' style='height:40px;'>
 <td id='A13' class='A6' category='general'>eight</td>
@@ -224,9 +225,9 @@
    <input id='iC13' type='text' class='Text iC6' onChange='return calculate("C13")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='' /></td>
 <td id='D13' class='D6' category='general'></td>
 <td id='E13' class='E6' category='general'></td>
-<td id='F13' class='D1' category='general'></td>
-<td id='G13' class='D1' category='general'></td>
-<td id='H13' class='D1' category='general'></td></tr>
+<td id='F13' class='E1' category='general'></td>
+<td id='G13' class='E1' category='general'></td>
+<td id='H13' class='E1' category='general'></td></tr>
 
 <tr id='ROW14' style='height:40px;'>
 <td id='A14' class='A6' category='general'>nine</td>
@@ -554,8 +555,8 @@
    <input id='iC43' type='text' class='Text iC43' onChange='return calculate("C43")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='SCORE:' /></td>
 <td id='D43' class='D43' category='percentage' format='0%'></td>
 <td id='E43' class='E43' category='general'>CORRECT&#33;</td>
-<td id='F43' class='D1' category='general'></td>
-<td id='G43' class='D1' category='general'></td>
+<td id='F43' class='E1' category='general'></td>
+<td id='G43' class='E1' category='general'></td>
 <td id='H43' class='E5' category='general'></td></tr></table>
 
 <input id='iZZ99' maxlength=0 style='background-color:transparent; border:none;' onfocus='scroll(0,0);return hilite("iC4");' />
