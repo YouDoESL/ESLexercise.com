@@ -699,7 +699,6 @@
 <object id='dL21' dependents='A21:B21'></object>
 
 <!-- dependent formats -->
-<object id='xP1' dependents='E6,'></object>
 <object id='xE6' dependents='E6,'></object>
 <object id='xF7' dependents='E7,'></object>
 <object id='xC7' dependents='E7,H7,K7,'></object>
@@ -853,7 +852,7 @@
 <object id='xM21' dependents='M21,'></object>
 
 <!-- conditional formats -->
-<object id='cE6' type='text/plain' formula='if(P1!=""){setClass("E6","E6_c1")} else {setClass("E6","E6")}'></object>
+<object id='cE6' type='text/plain' formula='if(#REF!<>""){setClass("E6","E6_c1")} else {setClass("E6","E6")}'></object>
 <object id='cE7' type='text/plain' formula='if((F7!="") && (C7!=E7)){setClass("E7","E7_c1")} else if((F7=="y") && (C7==E7)){setClass("E7","E7_c2")} else {setClass("E7","E7")}'></object>
 <object id='cG7' type='text/plain' formula='if(G7=="CORRECT !"){setClass("G7","G7_c1")} else {setClass("G7","G7")}'></object>
 <object id='cH7' type='text/plain' formula='if((I7!="") && (H7!=C7)){setClass("H7","H7_c1")} else if((I7=="y") && (C7==H7)){setClass("H7","H7_c2")} else {setClass("H7","E7")}'></object>
