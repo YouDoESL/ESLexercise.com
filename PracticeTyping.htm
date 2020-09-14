@@ -9,7 +9,7 @@
    var calculateOnInit = true;
    var imageFolder = 'wwsImages';
    var displayZeroes = true;
-   var lastCell = 'F30';
+   var lastCell = 'F31';
    var dbConnection = '';
    var dbQueryScript = '';
    var firstInput = 'iE6';
@@ -19,6 +19,7 @@
    var activeBackground = 'transparent';
    var tabOrder = '';
    var lastBtnClick = '';
+   var anchorVisited = 'color:#954F72; font:11pt Calibri; text-decoration:underline;';
    var pageOrientation = 1;
    var pageLeftMargin = 67;
    var pageRightMargin = 67;
@@ -35,6 +36,7 @@
  Body {overflow:auto;}
  A {text-decoration:none; cursor:pointer; color:inherit;}
  A.Bookmark {cursor:default;}
+ A.active {color:#0563C1; font:11pt Calibri; text-decoration:underline;}
  Input:focus {outline:none;}
  Input.Text {border:none; padding-right:0px;}
  Input.Checkbox {border:none; background:transparent; box-shadow:none;}
@@ -70,8 +72,12 @@
  TD.C26 {font:Italic 13.5pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:#000000 solid 1px; border-left:0px; border-right:0px; border-bottom:#000000 solid 1px;}
  TD.A27 {font:13.5pt Arial; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-right:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
  TD.C27 {font:13.5pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; border-top:#000000 solid 1px; border-left:0px; border-right:0px; border-bottom:#000000 solid 1px; /*input*/}
+ TD.A31 {font:14pt Arial; background-color:#FFFFFF; color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
+ TD.C31 {font:16pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; border-top:#000000 solid 1px; border-left:0px; border-right:0px; border-bottom:0px; /*input*/}
+ TD.E31 {font:11pt Calibri; background-color:#FFFFFF; vertical-align:bottom; padding-left:2px; border-top:#000000 solid 1px; border-left:0px; border-right:0px; border-bottom:0px;}
  Input.iE6 {font:13.5pt Calibri; background-color:#FFFFFF; color:#000000; width:432px; padding:11px 2px 0px 2px;  text-align:left;}
  Input.iC27 {font:13.5pt Calibri; background-color:#FFFFFF; color:#000000; width:432px; padding:11px 2px 0px 2px; }
+ Input.iC31 {font:16pt Calibri; background-color:#FFFFFF; color:#000000; width:432px; padding:5px 2px 0px 2px; }
  .E5_c1 {font:13.5pt Calibri; background-color:#00B050; color:#FFFFFF; width:436px; height:28px; border-top:#000000 solid 1px; border-left:#000000 solid 1px; border-right:#000000 solid 1px; border-bottom:#000000 solid 1px;}
 }
 @media print {
@@ -358,7 +364,16 @@
 <td id='D30' class='B1' category='general'></td>
 <td id='E30' class='E6' category='general' data-cval=''>
    <input id='iE30' type='text' class='Text iE6' onChange='return calculate("E30")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='' /></td>
-<td id='F30' class='F4' category='general'></td></tr></table>
+<td id='F30' class='F4' category='general'></td></tr>
+
+<tr id='ROW31' style='height:27px;'>
+<td id='A31' class='A31' category='general'></td>
+<td id='B31' class='B1' category='general'></td>
+<td id='C31' class='C31' category='general' data-cval=''>
+   <input id='iC31' type='text' class='Text iC31' onChange='return calculate("C31")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='How well did you do?' /></td>
+<td id='D31' class='B1' category='general'></td>
+<td id='E31' class='E31' category='general'></td>
+<td id='F31' class='F1' category='general'></td></tr></table>
 
 <input id='iZZ99' maxlength=0 style='background-color:transparent; border:none;' onfocus='scroll(0,0);return hilite("iE6");' />
 </form>
