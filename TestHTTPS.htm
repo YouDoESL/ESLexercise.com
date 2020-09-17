@@ -19,7 +19,6 @@
    var activeBackground = 'transparent';
    var tabOrder = '';
    var lastBtnClick = '';
-   var anchorVisited = 'color:#954F72; font:11pt Calibri; text-decoration:underline;';
    var pageOrientation = 1;
    var pageLeftMargin = 67;
    var pageRightMargin = 67;
@@ -36,7 +35,6 @@
  Body {overflow:auto;}
  A {text-decoration:none; cursor:pointer; color:inherit;}
  A.Bookmark {cursor:default;}
- A.active {color:#0563C1; font:11pt Calibri; text-decoration:underline;}
  Input:focus {outline:none;}
  Input.Text {border:none; padding-right:0px;}
  Input.Checkbox {border:none; background:transparent; box-shadow:none;}
@@ -54,8 +52,13 @@
  TD.hidden {width:0px; visibility:hidden;}
  TD.A1 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px; /*input*/}
  TD.B1 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
- Input.iB4 {font:11pt Calibri; background-color:#FFFFFF; color:#000000; width:59px; padding:4px 2px 0px 2px; }
- .C4_c1 {font:11pt Calibri; color:#FF0000; width:63px; height:18px; border-top:#000000 solid 1px; border-left:#000000 solid 1px; border-right:#000000 solid 1px; border-bottom:#000000 solid 1px; text-align:center;}
+ TD.B3 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:#000000 solid 2px;}
+ TD.A4 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:#000000 solid 2px; border-bottom:0px;}
+ TD.B4 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; border-top:#000000 solid 2px; border-left:#000000 solid 2px; border-right:#000000 solid 2px; border-bottom:#000000 solid 2px; /*input*/}
+ TD.C4 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:#000000 solid 2px; border-right:0px; border-bottom:0px;}
+ TD.B5 {font:11pt Calibri; background-color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:#000000 solid 2px; border-left:0px; border-right:0px; border-bottom:0px;}
+ Input.iB4 {font:11pt Calibri; background-color:#FFFFFF; color:#000000; width:59px; padding:5px 2px 0px 2px; }
+ .B4_c1 {font:11pt Calibri; background-color:#FF0000; color:#000000; width:63px; height:19px; border-top:#000000 solid 1px; border-left:#000000 solid 1px; border-right:#000000 solid 1px; border-bottom:#000000 solid 1px; text-align:center;}
 }
 @media print {
  Input.button {display:none;}
@@ -86,22 +89,22 @@
 <td id='C2' class='B1' category='general'></td>
 <td id='D2' class='B1' category='general'></td></tr>
 
-<tr id='ROW3' style='height:19px;'>
+<tr id='ROW3' style='height:20px;'>
 <td id='A3' class='B1' category='general'></td>
-<td id='B3' class='B1' category='general'></td>
+<td id='B3' class='B3' category='general'></td>
 <td id='C3' class='B1' category='general'></td>
 <td id='D3' class='B1' category='general'></td></tr>
 
-<tr id='ROW4' style='height:19px;'>
-<td id='A4' class='B1' category='general'></td>
-<td id='B4' class='A1' category='general' data-cval=''>
+<tr id='ROW4' style='height:20px;'>
+<td id='A4' class='A4' category='general'></td>
+<td id='B4' class='B4' category='general' data-cval=''>
    <input id='iB4' type='text' class='Text iB4' onChange='return calculate("B4")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='' /></td>
-<td id='C4' class='B1' category='general'></td>
+<td id='C4' class='C4' category='general'>"&#60;--RED IF &#62;1"</td>
 <td id='D4' class='B1' category='general'></td></tr>
 
 <tr id='ROW5' style='height:19px;'>
 <td id='A5' class='B1' category='general'></td>
-<td id='B5' class='B1' category='general'></td>
+<td id='B5' class='B5' category='general'></td>
 <td id='C5' class='B1' category='general'></td>
 <td id='D5' class='B1' category='general'></td></tr></table>
 
@@ -114,14 +117,10 @@
 <div id='UserMessage'  class='InputMessage' style='display:none; width:100px; height:50px; position:absolute; top:50%; left:50%; margin-left:-50px; margin-top:-25px; text-align:center; line-height:4em;'></div>
 
 <!-- formulas -->
-<object id='fC4' formula='((B4>0) ? ("TEST") : (false))'></object>
-
-<!-- dependencies -->
-<object id='dB4' dependents='C4'></object>
 
 <!-- dependent formats -->
-<object id='xC4' dependents='C4,'></object>
+<object id='xB4' dependents='B4,'></object>
 
 <!-- conditional formats -->
-<object id='cC4' type='text/plain' formula='if(C4=="""TEST"""){setClass("C4","C4_c1")} else {setClass("C4","B1")}'></object>
+<object id='cB4' type='text/plain' formula='if(B4>1){setClass("B4","B4_c1")} else {setClass("B4","B4")}'></object>
 </center></body></html>
