@@ -71,9 +71,9 @@
  TD.B11 {font:20pt "Comic Sans MS"; background-color:#FFFFFF; color:#FFFFFF; text-align:left; vertical-align:bottom; padding-left:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
  TD.C11 {font:20pt "Comic Sans MS"; text-decoration:underline; background-color:#FFFFFF; text-align:right; vertical-align:bottom; padding-right:2px; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px;}
  TD.E11 {font:20pt "Comic Sans MS"; text-decoration:underline; background-color:#FFFFFF; text-align:center; vertical-align:bottom; padding-right:2px; border-top:#000000 solid 1px; border-left:0px; border-right:0px; border-bottom:#000000 solid 1px;}
- TD.E27 {font:11pt Calibri; background-color:#FFFFFF; color:#FFFFFF; text-align:center; vertical-align:bottom; border-top:#000000 solid 1px; border-left:0px; border-right:0px; border-bottom:0px; /*input*/}
+ TD.C27 {font:11pt Calibri; background-color:#FFFFFF; text-align:center; vertical-align:bottom; border-top:0px; border-left:0px; border-right:0px; border-bottom:0px; /*input*/}
  Input.iE4 {font:20pt "Comic Sans MS"; background-color:#FFFF00; color:#000000; width:149px; padding:11px 2px 0px 2px;  text-align:center;}
- Input.iE27 {font:11pt Calibri; background-color:#FFFFFF; color:#FFFFFF; width:149px; padding:-11px 2px 0px 2px;  text-align:center;}
+ Input.iC27 {font:11pt Calibri; background-color:#FFFFFF; color:#000000; width:333px; padding:-11px 2px 0px 2px;  text-align:center;}
  /* Conditional Formats */
  .F4_c1 {font:22pt "Comic Sans MS"; background-color:#C5D9F1; color:#000000; width:305px; height:37px; border-top:#000000 solid 1px; border-left:#000000 solid 1px; border-right:#000000 solid 1px; border-bottom:#000000 solid 1px;}
  .F4_c2 {font:22pt "Comic Sans MS"; background-color:#538DD5; color:#000000; width:305px; height:37px; border-top:#000000 solid 1px; border-left:#000000 solid 1px; border-right:#000000 solid 1px; border-bottom:#000000 solid 1px;}
@@ -320,10 +320,8 @@
 <tr id='ROW27' style='height:4px;'>
 <td id='A27' class='A3' category='general'></td>
 <td id='B27' class='B11' category='general'></td>
-<td id='C27' class='A3' category='general'></td>
-<td id='D27' class='A3' category='general'></td>
-<td id='E27' class='E27' category='general' data-cval=''>
-   <input id='iE27' type='text' class='Text iE27' onChange='return calculate("E27")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='' /></td>
+<td id='C27' colspan=3 class='C27' category='general' data-cval=''>
+   <input id='iC27' type='text' class='Text iC27' onChange='return calculate("C27")' onfocus='return hilite(this.id);' onKeyDown='return enterKeyIsTab(event);' data-default='' /></td>
 <td id='F27' class='F1' category='general'></td></tr></table>
 
 <input id='iZZ99' maxlength=0 style='background-color:transparent; border:none;' onfocus='scroll(0,0);return hilite("iE4");' />
